@@ -1,0 +1,1009 @@
+// Variables
+//fonts
+@Primary-Font:'Merriweather', serif;
+@Secondary-Font:'Hubballi', cursive;
+@Elegant-Font:'Libre Baskerville', serif;
+//colors
+@font-gray:#2c2c2c;
+@custom-black:#04072efd;
+@rosita_transparent:fade(rgba(255, 0, 128, 0.507),70%);
+//----------------------------------------------------------------
+//Generales
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family:@Primary-Font;
+    color: Black;
+}
+.container {
+    width: 90%;
+    max-width: 1090px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color:black;
+    transition: all .3s ease;
+    &:hover{
+        color:fade(black,50%)
+    }
+}
+//----------------------------------------------------------------
+header {
+    img{
+        vertical-align: top;
+        max-width: 100%;
+    }
+    .bar-menu{
+        background:#04072efd;
+        width:100%;
+        position: fixed;
+        z-index: 99;
+        top:0;
+        padding:0 2.25rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        min-height:5.875rem;
+        align-items: center;
+    }
+    .logo{
+        width:6,25;
+        max-width: 6,25rem;
+    }
+
+    .bar-nav{
+        a{
+            color:white;
+            padding:0 0.5625rem;
+        }
+
+        .a{
+            transition:all 0.3s ease;
+            display:inline-block;
+            &:hover{
+                padding:5px;
+                border: 2px solid fade(#04f7ff,25%);
+                border-radius: 5px;
+                background-color:fade(white,25%);
+
+            }
+
+        }
+    }
+
+    .top-redes{
+
+        a{
+            color:white;
+            padding:0 0.5625rem;
+
+            &:hover{
+                color:@rosita_transparent;
+            }
+
+        }
+
+    }
+    .bar-menu-movil{
+        .burger-menu{
+            cursor: pointer;
+            color:white;
+            font-size: 2.5rem;
+        }
+        background:#04072efd;
+        width:100%;
+        position: fixed;
+        z-index: 99;
+        top:0;
+        padding:0 2.25rem;
+        display:none;
+        flex-direction:row;
+        justify-content: space-between;
+        min-height:5.875rem;
+        align-items: center;
+
+        >.slide-menu{
+            position:fixed;
+            top:6.25rem;
+            left:-80%;
+            text-align:center;
+            padding:0 1rem;
+            background:#04072efd;
+            width:60%;
+            transition: all .3s ease;
+            border-radius: 0 0 8px 0;
+
+            &.active{
+                left:0;
+            }
+
+            .bar-nav{
+                a{
+                display:block;
+                padding: 0.5625rem 0 ;
+                border-top: 1px solid @rosita_transparent;
+                
+                }
+            }
+        }
+    }
+
+}
+//-----------------------------------------------------------------
+.main{
+
+    .portada{
+        width:100%;
+        margin-top: 6.25rem;
+
+        .port{
+            overflow: hidden;
+            .slider{
+                display: flex;
+                background-color:black;
+                width:500%;
+                position: relative;
+                height:31.25rem;
+                .fotos{
+                    height:31.25rem;
+                    width:100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    opacity: 0.8;
+                    // display:none;
+        
+                    &.prin{
+                        background-image: url(../img/SlideLightboxOverlay/banner.jpg);
+        
+                    }
+        
+                    &.moda{
+                        background-image: url(../img/SlideLightboxOverlay/maxresdefault.jpg);
+                    }
+                    &.belleza{
+                        background-image: url(../img/SlideLightboxOverlay/camisa-blanca-t.jpg);
+                        
+                    }
+                    &.estilos{
+                        background-image: url(../img/SlideLightboxOverlay/271645.jpg);
+                        background-position-y: top;
+                        
+                    }
+                    &.disenos{
+                        background-image: url(../img/SlideLightboxOverlay/sueteroversizeportada2-680x380.jpg)
+                    }
+        
+                    .overlay{
+                        opacity:0;
+                        width: 100%;
+                        height: 100%;
+                        background: fade(black,50%);
+                        position: relative;
+                        cursor: pointer;
+                        transition: all .3s ease;
+        
+        
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                        .titulo{
+                            opacity: 1;
+                            font-size: 4.5rem;
+                            color: fade(white,90%);
+                            position: absolute;
+                            top: 30%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            
+                        }
+                        i{
+                            color: white;
+                            position: absolute;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size:1.50rem;              
+                        }
+                    }
+                }
+            }
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 3rem;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(255, 255, 255, 0.1);
+
+            &:hover{
+                
+                background-color: rgba(255, 255, 255, 0.5);
+                
+            }
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+
+
+        
+
+    }
+    //----------------------------------------------------------------
+    .nosotros{
+        padding: 5.625rem 0;
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .col.izq{
+                width: 30%;
+                border-right: 1px solid rgba(0, 0, 0, 0.301);
+                display: flex;
+                align-items: center;
+                padding-right: 5%;
+                flex-direction: column;
+                justify-content: center;
+                h2{
+                    display: block;
+                    font-size:3.5rem
+                }
+                
+            }
+            .col.der{
+                width: 70%;
+                padding-left: 5%;
+
+                .text{
+                    p{
+                        font-size:1.125rem;
+                        line-height:1.75;
+                        color:@font-gray;
+                        font-family: @Elegant-Font;
+                    }
+                }
+
+            }
+        }
+    }
+    //------------------------------------------------------------------
+    .nuestro-trabajos{
+
+        background-color: rgb(1, 1, 29);
+        padding: 5.625rem 0;
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .col{
+                width: 50%;
+                &.izq{
+                    box-shadow: 0px 9px 32px -1px rgba(0,0,0,0.5);
+                    overflow: hidden;
+                }
+
+                &.der{
+
+                    padding:3.25rem;
+                    padding-right: 0;
+
+                    h2{
+                        color: #fff;
+                        font-size: 3rem;
+                        padding-bottom:2rem;
+                        font-family: @Elegant-Font;
+
+
+                    }
+                    p{
+                        color:fade(white,90%);
+                        padding-bottom: 1.125rem;
+                        font-size:1.125rem;
+                        line-height:1.75rem;
+                        font-family: @Elegant-Font;
+
+                        &:last-child{
+                            padding-bottom:0;
+                        }
+                    }
+
+                }
+
+                .slider{
+
+                    width:500%;
+                    display:flex;
+                    min-height: 400px;
+
+                    .slide{
+                        width:100%;
+                        
+                        background-size: cover;
+                        background-position: center;
+
+                        &.foto1{
+                            background-image: url(../img/slidertrabajos/3fb7787d51adbb986e96d255003e0d7f.jpg);
+                        }
+                        &.foto2{
+                            background-image: url(../img/slidertrabajos/517ip+6S7hL._AC_UL320_.jpg);
+                        }
+                        &.foto3{
+                            background-image: url(../img/slidertrabajos/IMG_20200429_101935520.jpg);
+                        }
+
+                        &.foto4{
+                            background-image: url(../img/slidertrabajos/D_NQ_NP_694523-MLV44382679919_122020-O.jpg);
+                        }
+                        &.foto5{
+                            background-image: url(../img/slidertrabajos/vesti.jpg);
+                        }
+
+                    }
+
+                }
+            }
+
+
+            
+        }
+
+    }
+
+    .ropa{
+
+        padding:5.625rem 0;
+
+        .container{
+            
+            .title-section{
+                
+                h2{
+                    text-align:center;
+                    font-size: 3rem;
+                }
+            }
+            .container-ropas{
+                align-items: center;
+                display:flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                margin-top:2.5rem;
+
+                .Encabezado{
+                    font-weight: 600;
+                    font-family: @Primary-Font;
+                    text-transform:capitalize;
+                    list-style:none;
+                    display: flex;
+                    justify-content:center;
+
+                    li{
+                        a{
+                            padding:0 1.4375rem 1.125rem 1.4375rem;
+                            display: block;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            border-bottom: 2px solid transparent;
+
+                            &:hover{
+                                color:rgba(87, 15, 51, 0.363)
+                            }
+                        }
+                        &.active{
+                            a{
+                                color:rgb(92, 31, 64);
+                                border-bottom: 2px solid rgb(92, 31, 64);
+                            }
+                        }
+                    }
+                }
+
+                .container-menu{
+
+                    max-width:60rem;
+                    margin-top:2.5rem;
+                    border: 6px double rgb(82, 82, 82);
+                    padding:0 2.25rem;
+                    display:flex;
+
+                    >div{
+                        display:none;
+                        transition: all .3s ease;
+                        flex-direction: row;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .active{
+                        display:flex;
+                    }
+
+
+                    #Hombres .foto1{
+                        background-image: url(../img/Ofrecemos/Hombres/61n+vIfzOKL._AC._SR360\,460.jpg);
+                    }
+                    #Hombres .foto2{
+                        background-image: url(../img/Ofrecemos/Hombres/80f1b272762a5b45bc92921dc35c9a46.jpg);
+                    }
+                    #Hombres .foto3{
+                        background-image: url(../img/Ofrecemos/Hombres/D_NQ_NP_694523-MLV44382679919_122020-O.jpg);
+                    }
+                    #Hombres .foto4{
+                        background-image: url(../img/Ofrecemos/Hombres/dc258968064b35c273f060ffa3f6d719.jpg);
+                    }
+
+                    #Mujeres .foto1{
+                        background-image: url(../img/Ofrecemos/Mujeres/0181ecd047e36e44d956cb2388e8ed08.jpg);
+                    }
+                    #Mujeres .foto2{
+                        background-image: url(../img/Ofrecemos/Mujeres/IMG_20200429_101935520.jpg);
+                    }
+                    #Mujeres .foto3{
+                        background-image: url(../img/Ofrecemos/Mujeres/pantalon-mujer.jpg);
+                    }
+                    #Mujeres .foto4{
+                        background-image: url(../img/Ofrecemos/Mujeres/Tendencias-de-ropa-primavera.jpg);
+                    }
+
+                    #Ninos .foto1{
+                        background-image: url(../img/Ofrecemos/Niños/450_1000.jpg);
+                    }
+                    #Ninos .foto2{
+                        background-image: url(../img/Ofrecemos/Niños/info1_b.jpg);
+                    }
+                    #Ninos .foto3{
+                        background-image: url(../img/Ofrecemos/Niños/marcas_ropa_online-loveitsara.jpg);
+                    }
+                    #Ninos .foto4{
+                        background-image: url(../img/Ofrecemos/Niños/450_1.jpg);
+                    }
+                    #Unisex .foto1{
+                        background-image: url(../img/Ofrecemos/Unisex/6688069400_2_9_1.jpg);
+                    }
+                    #Unisex .foto2{
+                        background-image: url(../img/Ofrecemos/Unisex/hmprod-7.jpg);
+                    }
+                    #Unisex .foto3{
+                        background-image: url(../img/Ofrecemos/Unisex/ropa-unisex.jpeg);
+                    }
+                    #Unisex .foto4{
+                        background-image: url(../img/Ofrecemos/Unisex/TJ5NNRSOYJG7BLHFWUZAX75NXM.jpg);
+                    }
+
+                    .items{
+                        
+                        margin: 2.50rem;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        padding:2.25rem;
+                        border: 1px solid #2f2f2f2f;
+                        border-radius:5px;
+                        transition: all 0.1s ease;
+
+                        &:hover{
+                            border: 4px double #2f2f2f2f;
+                        }
+                        
+                        .fotos{
+                            
+                            height:15.25rem;
+                            width:100%;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+  
+
+                            .overlay{
+                                opacity:0;
+                                width: 100%;
+                                height: 100%;
+                                background: fade(black,50%);
+                                position: relative;
+                                cursor: pointer;
+                                transition: all .3s ease;
+
+                                &:hover{
+                                    opacity: 0.8;
+                                }
+
+                                i{
+                                    color: white;
+                                    position: absolute;
+                                    top:50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    font-size:1.50rem;
+                                }
+                            }
+
+                        }
+
+                        .content{
+
+                            padding:1.5rem;
+
+                            form{
+                                padding:1.2rem;
+                                label{
+                                    cursor: pointer;
+                                    color:gray;
+                                    font-size:1.4rem;
+                                    &:hover{
+                                        color:orange;
+                                        & ~ label{
+                                            color:orange
+                                        }
+                                    }
+                                    
+                                }
+                                input[type = "radio"]{
+                                    display:none;
+                                }
+                                input[type="radio"]:checked ~ label {
+                                    color: orange;
+                                  }
+                                .clasificacion{
+                                    direction: rtl;
+                                    unicode-bidi: bidi-override;
+                                }
+                            }
+
+                        }
+
+
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .contactanos{
+        display:flex;
+        background-color:rgb(1, 1, 61);
+        flex-wrap: wrap;
+        .container{
+            width:50%;
+            padding: 2rem;
+            .colder{
+
+                background-image: url(../img/jdm\ white\ whit\ red.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size:cover;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                
+
+                .blurb {
+                    background-color: fade(#fff,90%);
+                    margin: 2rem;
+                    border: 1px solid gray;
+                    padding: 2rem;
+                    text-align: center;
+                    width:75%;
+                    h3{
+                        font-size:1.5rem;
+                        font-weight: 400px;
+                        line-height: 2.6875rem;
+                        margin-bottom: 1.125rem;
+                        border: 1px solid @font-gray;
+                    }
+                    p{
+                        font-size:1rem;
+                        color: #777;
+                    }
+
+                }
+
+            }
+            
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content:center;
+            width:50%;
+            form{
+                width:80%;
+                height:60%;
+                background-color:rgb(248, 159, 204);
+                border-radius:30px 0 0 30px;
+                padding:2rem;
+                >div{
+                    .input_group{
+                        position: relative;
+                        margin-bottom:2rem;
+                        display: flex;
+    
+                        input[type="text"],input[type="email"],textarea{
+                            font-size:1rem;
+                            color:white;
+                            width:100%;
+                            background:none;
+                            outline: none;
+                            padding:0.9375rem 0;
+                            padding:1rem;
+                            border: none;
+                            border-bottom:2px fade(rgba(255, 0, 128, 0.507),70%);
+                            vertical-align:top;
+                            transition: all 0.3s ease;
+    
+                            &:focus{
+                                border-bottom:2px solid @rosita_transparent;
+                                background: rgb(160, 77, 118);
+                                &:hover{
+                                    background:rgb(160, 77, 118);
+                                }
+                            }
+                            &:hover{
+                                background:rgb(214, 104, 159);
+                            }
+    
+                        }
+    
+                        textarea{
+                            max-width: 100%;
+                            height:10rem;
+                            max-height: 12rem;
+                            min-height:5.125rem;
+                            min-width:100%;
+                            padding:1rem;
+                            margin-bottom: 0;
+                        }
+    
+                        label{
+                            color: white;
+    
+                            &.label{
+                                position:absolute;
+                                top:1rem;
+                                left:0;
+                                font-size: 1rem;
+                                line-height:1rem;
+                                margin-left: 1rem;
+                                transition: all .3s ease;
+    
+                                &.active{
+                                    top:-0.95rem;
+                                    margin-left: 0;
+                                    font-size: 0.75rem;
+                                    line-height: 0.75rem;
+                                    color:white;
+                                    
+                                }
+                            }
+                        }
+    
+                        .error{
+                            position:absolute;
+                            color: rgb(255,59,59);
+                            top:3rem;
+                            font-size:1rem;
+                        }
+                    }
+    
+                    input[type="submit"]{
+                        
+                        background:@rosita_transparent;
+                        color:white;
+                        border-radius: 5px;
+                        border: 2px solid white;
+                        cursor: pointer;
+                        display: block;
+                        margin:0 auto;
+                        margin-top:2rem;
+                        padding:0.9375rem;
+                        width:7rem;
+                        outline: none;
+                        transition:all .3s ease;
+    
+                        &:hover{
+                            background:darken(@rosita_transparent,10%)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+.arriba{
+    // background:white;
+    width:4.5rem;
+    height:4.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: fixed;
+    bottom:2%;
+    border-radius:100%;
+    
+    right:2%;
+    transition:all .3s ease;
+    cursor: pointer;
+    a{
+        font-weight:2000;
+        font-size: 2rem;
+        color:rgb(46, 46, 46);
+        &:hover{
+            color:rgb(63, 63, 63)
+        }
+    }
+    &:hover{
+        border:1px solid @custom-black;
+        background:darken(white,10%);
+    }
+}
+.socials{
+    background:none;
+    position: fixed;
+    bottom:15%;
+    right:2%;
+    width:20rem;
+    padding:1rem;
+    border-radius:50px 0 0 50px;
+    right:-235px;
+    transition: all .3s ease;
+    .top-redes{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        background:none;
+    }
+    a{
+        font-size:4rem;
+        color:black;
+        
+        &:hover{
+            color:@rosita_transparent;
+        }
+    }
+    &:hover{
+        background-color: fade(black,50%);
+        right:0;
+    }
+}
+//-----------------------------------------------------------------
+footer{
+    border-top:2px solid white;
+    background:@custom-black;
+    padding: 5.625rem 0 ;
+    text-align: center;
+    color: white;
+
+    .top.redes{
+        margin-top: 2.25rem;
+        a{
+            padding: 0 0.5625rem;
+            color: white;
+            transition: all .3s ease;
+            &:hover{
+                color:@rosita_transparent;
+            }
+        }
+    }
+    p{
+        font-weight: 400;
+
+    }
+}
+//------------------------------------------------------------------
+//Media Queries
+@media all and (max-width:1110px){
+    header .bar-menu{
+        display: none;
+        
+    }
+    header .bar-menu-movil{
+        display:flex;
+    }
+
+}
+@media all and (max-width:1015px){
+    .main {
+        .nuestro-trabajos .container .col{
+                width: 100%;
+            h2{
+                text-align: center;
+            }
+            p{
+                text-align: justify;
+            }
+            &.der{
+                padding: 2rem;
+            }
+        }
+        .contactanos .container{
+            width: 100%;
+        }
+        .contactanos .form{
+            width: 100%;
+            align-items: center;
+            height:100%;
+            margin: 5rem 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            form{
+                border-radius: 30px 30px 0 0;
+                margin-bottom: 0;
+            }
+        }
+    }  
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:30rem;
+    }
+}
+@media all and (max-width:801px){
+    .main .nosotros .container .col{
+        &.izq{
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.301);
+            padding-bottom: 3rem;
+            margin-bottom:3rem;
+            h2{
+                font-size:6rem;
+            }
+            p{
+                font-size:1.5rem;
+                
+            }
+        }
+        &.der{
+            width: 100%;
+            padding-left: 0;
+            p{
+
+                text-align: justify;
+            }
+        }
+    }
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:26rem;
+    }
+
+    .main .portada .next,.main .portada .prev{
+        padding: 2.5rem;
+        top: 45%;
+    }
+    .main .nuestro-trabajos .container .col.der{
+        padding: 1rem;
+    }
+}
+@media all and (max-width:650px){
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:23rem;
+    }
+    .main .contactanos .container .colder .blurb{
+        margin:1rem;
+    }
+    .main .contactanos .container{
+        padding:0;
+        
+    }
+    .main .portada .prev, .main .portada .next {
+        top:40%;
+        padding: 2rem;
+        
+    }
+
+}
+@media all and (max-width:580px){
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:20rem;
+    }
+    .main .nosotros .container .col.izq h2{
+        font-size:5rem;
+    }
+}
+@media all and (max-width:510px){
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:18rem;
+    }
+    .main .portada .prev, .main .portada .next{
+        top:35%;
+    }
+}
+@media all and (max-width:500px){
+    .main .ropa .container .container-ropas .container-menu{
+        padding: 0;
+    }
+}
+@media all and (max-width:450px){
+    .main .ropa .container .container-ropas .Encabezado{
+        flex-wrap: wrap;
+    }
+    .main .ropa .container .container-ropas .Encabezado li.active a{
+
+        padding:1.125rem 1.4375rem 1.125rem 1.4375rem;
+
+    }
+    .main .ropa .container .container-ropas .Encabezado li a{
+        
+        padding:1.125rem 1.4375rem 1.125rem 1.4375rem;  
+    }
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:17rem;
+    }
+    .main .portada .prev, .main .portada .next{
+        top:30%;
+    }
+    
+}
+@media all and (max-width:420px){
+
+    .main .ropa .container .container-ropas .container-menu .items{
+        margin: 2.5rem 0 2.5rem 0;
+    }
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:15rem;
+    }
+    .main .portada .port .slider, .main .portada .port .slider .fotos{
+        height:16rem;
+    }
+
+
+}
+//----------------------------------------------------------------
+.imagen-modal{
+    
+    max-height: 70%;
+    max-width:100%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    transition: opacity .3s ease;
+    transition: all .7s ease;
+    +svg{
+        position:absolute;
+        top:5%;
+        right:3%;
+        color: @font-gray;
+        // font-size:2.25rem;
+        background: darken(white,20%);
+        display: inline-block;
+        // padding: 0.75rem 0.875rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover{
+            border-radius: 0;
+            background:white;
+        }
+    }
+}
